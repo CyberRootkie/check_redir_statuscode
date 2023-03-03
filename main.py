@@ -41,4 +41,5 @@ with open(args.input, 'r') as f:
             print(start_url, "Connection ERROR")
             final_status_code = 'Connection ERROR'           
         output_file.write(start_url + ';' + final_url + ';' + str(nb_redir) + ';' + str(final_status_code) + ';' + str(regex_find) + '\n')
+    f.close()
 output_file.close()
