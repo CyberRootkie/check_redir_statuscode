@@ -4,16 +4,11 @@ import re
 
 # Pour le check de dispo Amazon : --regex "<div id=\"outOfStock\""
 parser = argparse.ArgumentParser()
-parser.add_argument("--input", type=str, help="Fichier d'URLs à checker", default='')
+parser.add_argument("--input", type=str, help="Fichier d'URLs à checker", required=True)
 parser.add_argument("--output", type=str, help="Fichier de sortie pour les résultats", default="results.txt")
 parser.add_argument("--regex", type=str, help="(facultatif) Regex à checker dans le code HTML", default="")
 
 args = parser.parse_args()
-
-if args.input == '':
-    parser.print_usage()
-    exit()
-
 
 headers = {'user-agent': 'MyBot'}
 output_file = open(args.output, 'w')
